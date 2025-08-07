@@ -1,0 +1,1589 @@
+/* Style.css - Celebrazioni Liturgiche Plugin - Grace Church Style */
+
+.celebrazioni-container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 30px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+.celebrazioni-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.celebrazioni-header h2 {
+    font-size: 42px;
+    font-weight: 300;
+    color: #2d3748;
+    margin: 0;
+    position: relative;
+}
+
+.celebrazioni-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+.link-tutte {
+    font-size: 14px;
+    color: #667eea;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.link-tutte::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #667eea;
+    transition: width 0.3s ease;
+}
+
+.link-tutte:hover::before {
+    width: 100%;
+}
+
+.link-tutte:hover {
+    color: #5a67d8;
+}
+
+/* Carousel Container - Grace Church Style */
+.celebrazioni-carousel {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 40px;
+    cursor: grab;
+}
+
+.celebrazioni-carousel:active {
+    cursor: grabbing;
+}
+
+.celebrazioni-wrapper {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: 20px 0;
+    will-change: transform;
+}
+
+/* Card Styles - COMPATTE E OTTIMIZZATE */
+.celebrazione-card {
+    flex: 0 0 calc(16.666% - 25px);
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    min-height: 400px; /* Ridotto da 480px */
+    min-width: 300px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.celebrazione-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Container - IMMAGINI PULITE */
+.celebrazione-image {
+    position: relative;
+    height: 180px; /* Ridotto da 200px */
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.celebrazione-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    transition: transform 0.4s ease;
+}
+
+.celebrazione-card:hover .celebrazione-image img {
+    transform: scale(1.05);
+}
+
+.celebrazione-default-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.celebrazione-default-bg::before {
+    content: '✟';
+    font-size: 48px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* RIMOSSO .celebrazione-overlay completamente */
+
+/* Content - LAYOUT COMPATTO */
+.celebrazione-content {
+    position: relative;
+    padding: 20px; /* Ridotto da 25px */
+    height: calc(100% - 215px); /* Aggiornato per nuova altezza immagine */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #ffffff;
+}
+
+.celebrazione-label {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    padding: 4px 12px; /* Ridotto padding */
+    border-radius: 15px;
+    font-size: 10px; /* Ridotto font */
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 12px; /* Ridotto margin */
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.celebrazione-date-section {
+    text-align: center;
+    margin: 10px 0; /* Ridotto margin */
+    padding: 12px 0; /* Ridotto padding */
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.celebrazione-giorno {
+    font-size: 11px; /* Ridotto */
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #718096;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.celebrazione-data-grande {
+    font-size: 32px; /* Ridotto da 36px */
+    font-weight: 700;
+    line-height: 1;
+    color: #2d3748;
+    margin: 6px 0;
+}
+
+.celebrazione-mese {
+    font-size: 13px; /* Ridotto */
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #667eea;
+    text-transform: uppercase;
+}
+
+.celebrazione-orario {
+    font-size: 13px; /* Ridotto */
+    font-weight: 600;
+    color: #4a5568;
+    text-align: center;
+    margin: 12px 0; /* Ridotto margin */
+    padding: 6px 10px; /* Ridotto padding */
+    background: #f7fafc;
+    border-radius: 6px;
+    border-left: 3px solid #667eea;
+}
+
+.celebrazione-titolo {
+    font-size: 16px; /* Ridotto da 18px */
+    font-weight: 600;
+    margin-bottom: 15px; /* Ridotto margin */
+    line-height: 1.3;
+    color: #2d3748;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.celebrazione-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: inline-block;
+    align-self: center;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+    user-select: auto;
+    -webkit-user-select: auto;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.celebrazione-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.celebrazione-btn:hover::before {
+    left: 100%;
+}
+
+.celebrazione-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Carousel Navigation - Grace Church Style */
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    color: #667eea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background: #667eea;
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+}
+
+.carousel-prev {
+    left: -22px;
+}
+
+.carousel-next {
+    right: -22px;
+}
+
+/* Dots Navigation - Grace Church Style */
+.celebrazioni-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 30px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #cbd5e0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+}
+
+.dot:hover {
+    background: #a0aec0;
+}
+
+.dot.active {
+    background: #667eea;
+    width: 24px;
+    border-radius: 4px;
+}
+
+/* Filters - Grace Church Style */
+.celebrazioni-filters {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-tipo {
+    padding: 10px 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 25px;
+    background: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4a5568;
+    transition: all 0.3s ease;
+}
+
+.filter-tipo:focus,
+.filter-tipo:hover {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    outline: none;
+}
+
+.toggle-layout {
+    padding: 10px 20px;
+    background: #ffffff;
+    color: #667eea;
+    border: 1px solid #667eea;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.toggle-layout:hover {
+    background: #667eea;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+/* Responsive Design - Grace Church Optimized */
+@media (max-width: 1800px) {
+    .celebrazione-card {
+        flex: 0 0 calc(20% - 24px);
+        min-width: 280px;
+    }
+}
+
+@media (max-width: 1500px) {
+    .celebrazione-card {
+        flex: 0 0 calc(25% - 22.5px);
+        min-width: 260px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .celebrazioni-container {
+        padding: 0 20px;
+    }
+    
+    .celebrazione-card {
+        flex: 0 0 calc(33.333% - 20px);
+        min-width: 250px;
+    }
+    
+    .celebrazione-data-grande {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 900px) {
+    .celebrazione-card {
+        flex: 0 0 calc(50% - 15px);
+        min-width: 240px;
+    }
+    
+    .celebrazione-titolo {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .celebrazioni-container {
+        padding: 0 15px;
+        margin: 40px auto;
+    }
+    
+    .celebrazioni-header {
+        margin-bottom: 35px;
+    }
+    
+    .celebrazioni-header h2 {
+        font-size: 32px;
+    }
+    
+    .celebrazioni-carousel {
+        margin-left: -15px;
+        margin-right: -15px;
+        padding: 0 15px;
+    }
+    
+    .celebrazioni-wrapper {
+        gap: 20px;
+    }
+    
+    .celebrazione-card {
+        flex: 0 0 calc(100% - 30px);
+        min-width: calc(100% - 30px);
+        max-width: calc(100% - 30px);
+        min-height: 350px; /* Ridotto per mobile */
+    }
+    
+    .celebrazione-image {
+        height: 140px; /* Ridotto per mobile */
+    }
+    
+    .celebrazione-content {
+        height: calc(100% - 150px);
+        padding: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .celebrazioni-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .celebrazione-card {
+        flex: 0 0 calc(100% - 30px);
+        min-width: calc(100% - 30px);
+        max-width: calc(100% - 30px);
+        min-height: 400px;
+    }
+    
+    .celebrazione-data-grande {
+        font-size: 28px;
+    }
+    
+    .celebrazione-titolo {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    
+    .carousel-prev,
+    .carousel-next {
+        display: none;
+    }
+    
+    .celebrazioni-filters {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .celebrazioni-container {
+        padding: 0 10px;
+        margin: 30px auto;
+    }
+    
+    .celebrazioni-carousel {
+        margin-left: -10px;
+        margin-right: -10px;
+        padding: 0 10px;
+    }
+    
+    .celebrazioni-wrapper {
+        gap: 15px;
+    }
+    
+    .celebrazione-card {
+        flex: 0 0 calc(100% - 20px);
+        min-width: calc(100% - 20px);
+        max-width: calc(100% - 20px);
+        min-height: 320px; /* Molto più compatto */
+    }
+    
+    .celebrazione-content {
+        padding: 15px;
+    }
+    
+    .celebrazione-image {
+        height: 120px; /* Molto ridotto */
+    }
+    
+    .celebrazione-data-grande {
+        font-size: 24px;
+    }
+    
+    .celebrazione-titolo {
+        font-size: 14px;
+    }
+}
+
+/* Layout Orizzontale - Grace Church */
+.celebrazione-card.layout-horizontal {
+    min-height: 250px;
+    flex-direction: row;
+}
+
+.celebrazione-card.layout-horizontal .celebrazione-image {
+    width: 40%;
+    height: 100%;
+}
+
+.celebrazione-card.layout-horizontal .celebrazione-content {
+    width: 60%;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.celebrazione-card.layout-horizontal .celebrazione-date-section {
+    flex: 0 0 100px;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.celebrazione-card.layout-horizontal .celebrazione-data-grande {
+    font-size: 24px;
+}
+
+/* Stili specifici per tipo di celebrazione - Grace Church */
+.celebrazione-card[data-tipo="confessioni"] .celebrazione-label {
+    background: linear-gradient(135deg, #d69e2e 0%, #b7791f 100%);
+}
+
+.celebrazione-card[data-tipo="confessioni"] .celebrazione-mese {
+    color: #d69e2e;
+}
+
+.celebrazione-card[data-tipo="confessioni"] .celebrazione-orario {
+    border-left-color: #d69e2e;
+}
+
+.celebrazione-card[data-tipo="eucaristia"] .celebrazione-label {
+    background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+}
+
+.celebrazione-card[data-tipo="eucaristia"] .celebrazione-mese {
+    color: #38a169;
+}
+
+.celebrazione-card[data-tipo="eucaristia"] .celebrazione-orario {
+    border-left-color: #38a169;
+}
+
+.celebrazione-card[data-tipo="solennita"] .celebrazione-label {
+    background: linear-gradient(135deg, #d53f8c 0%, #b83280 100%);
+}
+
+.celebrazione-card[data-tipo="solennita"] .celebrazione-mese {
+    color: #d53f8c;
+}
+
+.celebrazione-card[data-tipo="solennita"] .celebrazione-orario {
+    border-left-color: #d53f8c;
+}
+
+/* Animazioni Grace Church */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.celebrazione-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.celebrazione-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.celebrazione-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.celebrazione-card:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+/* Stato vuoto - Grace Church Style */
+.celebrazioni-no-content {
+    text-align: center;
+    padding: 80px 40px;
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    border-radius: 15px;
+    margin: 40px 0;
+    border: 1px solid #e2e8f0;
+}
+
+.celebrazioni-no-content h3 {
+    font-size: 28px;
+    font-weight: 300;
+    color: #2d3748;
+    margin-bottom: 15px;
+}
+
+.celebrazioni-no-content p {
+    font-size: 16px;
+    color: #718096;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Focus states per accessibilità */
+.dot:focus,
+.celebrazione-btn:focus,
+.toggle-layout:focus,
+.filter-tipo:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* Pagina Orario Confessioni - Grace Church Style */
+.orario-confessioni-page {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 80px 20px;
+    color: white;
+}
+
+.orario-confessioni-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 60px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.orario-confessioni-content h1 {
+    font-size: 48px;
+    font-weight: 300;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.orario-block {
+    margin-bottom: 40px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.orario-block h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.orario-block p {
+    font-size: 18px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.nota-importante {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 40px;
+    font-style: italic;
+    border-left: 4px solid rgba(255, 255, 255, 0.5);
+}
+
+--------------------------------------------------------------
+
+/* Single Celebrazione Styles - Layout Moderno */
+
+.celebrazione-single-wrapper {
+    background: #f8fafc;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Breadcrumb Section */
+.celebrazione-breadcrumb-section {
+    background: white;
+    padding: 15px 0;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.celebrazione-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.celebrazione-breadcrumb a {
+    color: #667eea;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.celebrazione-breadcrumb a:hover {
+    color: #5a67d8;
+    text-decoration: underline;
+}
+
+.celebrazione-breadcrumb .separator {
+    color: #a0aec0;
+    font-weight: 300;
+}
+
+.celebrazione-breadcrumb .current {
+    color: #4a5568;
+    font-weight: 500;
+}
+
+/* Main Section */
+.celebrazione-main-section {
+    padding: 50px 0;
+}
+
+.celebrazione-layout {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 50px;
+    align-items: start;
+}
+
+/* Left Column - Informazioni */
+.celebrazione-info-column {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Header con data */
+.celebrazione-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.celebrazione-date-display {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.date-number {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1;
+    color: #2d3748;
+}
+
+.date-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.date-month {
+    font-size: 18px;
+    font-weight: 600;
+    color: #667eea;
+    letter-spacing: 1px;
+}
+
+.date-year {
+    font-size: 16px;
+    color: #718096;
+    font-weight: 500;
+}
+
+.date-day {
+    font-size: 14px;
+    color: #a0aec0;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.celebrazione-type-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    margin-left: auto;
+}
+
+.type-icon {
+    font-size: 16px;
+}
+
+/* Titolo */
+.celebrazione-title {
+    font-size: 42px;
+    font-weight: 300;
+    line-height: 1.2;
+    color: #2d3748;
+    margin-bottom: 35px;
+}
+
+/* Informazioni rapide */
+.celebrazione-quick-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+    padding: 25px;
+    background: #f7fafc;
+    border-radius: 15px;
+    border-left: 4px solid #667eea;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.info-icon {
+    font-size: 20px;
+    width: 24px;
+    text-align: center;
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.info-label {
+    font-size: 12px;
+    color: #718096;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-value {
+    font-size: 16px;
+    color: #2d3748;
+    font-weight: 600;
+}
+
+/* Contenuto testo */
+.celebrazione-content-text {
+    margin-bottom: 40px;
+    line-height: 1.7;
+    color: #4a5568;
+    font-size: 16px;
+}
+
+.celebrazione-content-text p {
+    margin-bottom: 20px;
+}
+
+.celebrazione-content-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Bottoni azione */
+.celebrazione-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.secondary-btn {
+    background: white;
+    color: #4a5568;
+    border: 2px solid #e2e8f0;
+}
+
+.secondary-btn:hover {
+    border-color: #667eea;
+    color: #667eea;
+    transform: translateY(-1px);
+}
+
+.btn-icon {
+    font-size: 16px;
+}
+
+/* Right Column - Media */
+.celebrazione-media-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Immagine principale */
+.celebrazione-featured-image {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 30px;
+}
+
+.celebrazione-featured-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.celebrazione-featured-image:hover img {
+    transform: scale(1.05);
+}
+
+.default-image {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.default-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.default-text {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Card stili comuni */
+.related-celebrations-card,
+.contact-info-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+/* Celebrazioni correlate */
+.related-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f1f5f9;
+    transition: all 0.2s ease;
+}
+
+.related-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.related-item:hover {
+    transform: translateX(5px);
+}
+
+.related-date {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+}
+
+.date-num {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.date-mon {
+    font-size: 10px;
+    opacity: 0.9;
+}
+
+.related-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.related-type {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.related-title {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+.related-title a {
+    color: #2d3748;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.related-title a:hover {
+    color: #667eea;
+}
+
+.related-time {
+    font-size: 12px;
+    color: #718096;
+}
+
+.no-related {
+    text-align: center;
+    padding: 20px 0;
+    color: #718096;
+}
+
+.view-all-link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.view-all-link:hover {
+    text-decoration: underline;
+}
+
+/* Contatti */
+.contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: #f7fafc;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.contact-item:hover {
+    background: #edf2f7;
+    transform: translateY(-1px);
+}
+
+.contact-icon {
+    font-size: 20px;
+    width: 24px;
+    text-align: center;
+}
+
+.contact-label {
+    font-size: 12px;
+    color: #718096;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contact-value {
+    font-size: 14px;
+    color: #2d3748;
+    font-weight: 600;
+}
+
+/* Share Modal */
+.share-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.share-modal-content {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.share-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.share-modal-header h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #a0aec0;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.close-modal:hover {
+    background: #f1f5f9;
+    color: #4a5568;
+}
+
+.share-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.share-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+    background: none;
+}
+
+.share-btn.facebook {
+    background: linear-gradient(135deg, #4267B2 0%, #3b5998 100%);
+    color: white;
+}
+
+.share-btn.twitter {
+    background: linear-gradient(135deg, #1DA1F2 0%, #1991db 100%);
+    color: white;
+}
+
+.share-btn.whatsapp {
+    background: linear-gradient(135deg, #25D366 0%, #22c55e 100%);
+    color: white;
+}
+
+.share-btn.email {
+    background: linear-gradient(135deg, #6B7280 0%, #4B5563 100%);
+    color: white;
+}
+
+.share-btn.copy-link {
+    background: white;
+    color: #4a5568;
+    border-color: #e2e8f0;
+}
+
+.share-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.share-btn.copy-link:hover {
+    border-color: #667eea;
+    color: #667eea;
+}
+
+.share-icon {
+    font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .celebrazione-layout {
+        grid-template-columns: 1fr 350px;
+        gap: 40px;
+    }
+    
+    .celebrazione-title {
+        font-size: 36px;
+    }
+    
+    .date-number {
+        font-size: 56px;
+    }
+}
+
+@media (max-width: 768px) {
+    .celebrazione-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .celebrazione-info-column {
+        padding: 30px;
+        order: 2;
+    }
+    
+    .celebrazione-media-column {
+        order: 1;
+    }
+    
+    .celebrazione-featured-image {
+        position: static;
+        margin-bottom: 20px;
+    }
+    
+    .celebrazione-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
+    .celebrazione-type-badge {
+        margin-left: 0;
+        align-self: flex-start;
+    }
+    
+    .celebrazione-title {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+    
+    .date-number {
+        font-size: 48px;
+    }
+    
+    .celebrazione-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .action-btn {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .share-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .share-modal-content {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .celebrazione-main-section {
+        padding: 30px 0;
+    }
+    
+    .celebrazione-info-column,
+    .related-celebrations-card,
+    .contact-info-card {
+        padding: 25px;
+    }
+    
+    .celebrazione-header {
+        padding-bottom: 20px;
+    }
+    
+    .celebrazione-date-display {
+        gap: 12px;
+    }
+    
+    .date-number {
+        font-size: 40px;
+    }
+    
+    .date-month {
+        font-size: 16px;
+    }
+    
+    .celebrazione-title {
+        font-size: 24px;
+    }
+    
+    .celebrazione-quick-info {
+        padding: 20px;
+    }
+    
+    .info-item {
+        gap: 12px;
+    }
+    
+    .action-btn {
+        padding: 12px 20px;
+    }
+    
+    .related-item {
+        gap: 12px;
+    }
+    
+    .related-date {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .contact-item {
+        padding: 12px;
+        gap: 12px;
+    }
+    
+    .share-modal-content {
+        padding: 25px 15px;
+    }
+    
+    .share-modal-header h3 {
+        font-size: 20px;
+    }
+}
+
+/* Animazioni di entrata */
+.celebrazione-info-column {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+.celebrazione-media-column {
+    animation: slideInRight 0.6s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Micro-interazioni */
+.related-item,
+.contact-item,
+.action-btn,
+.share-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.action-btn::before,
+.share-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.action-btn:hover::before,
+.share-btn:hover::before {
+    left: 100%;
+}
+
+/* Focus states per accessibilità */
+.action-btn:focus,
+.share-btn:focus,
+.close-modal:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+.celebrazione-breadcrumb a:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+    border-radius: 3px;
+}
+
+/* Print styles */
+@media print {
+    .celebrazione-actions,
+    .share-modal,
+    .celebrazione-breadcrumb-section {
+        display: none;
+    }
+    
+    .celebrazione-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .celebrazione-info-column,
+    .celebrazione-media-column {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .celebrazione-featured-image img {
+        max-height: 300px;
+        object-fit: contain;
+    }
+}
+
+/* Stato caricamento per immagini lazy */
+.celebrazione-featured-image img {
+    transition: opacity 0.3s ease;
+}
+
+.celebrazione-featured-image img[loading] {
+    opacity: 0.7;
+}
+
+.celebrazione-featured-image img[loading]:not([src]) {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
